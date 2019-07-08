@@ -1,0 +1,43 @@
+#!/usr/bin/env python 
+# -*- coding:utf-8 -*-
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import random
+import time
+t=0
+# 开始请求
+url_list=[
+'https://blog.csdn.net/weixin_42555401/article/details/89181455',
+'https://blog.csdn.net/weixin_42555401/article/details/89381819',
+'https://blog.csdn.net/weixin_42555401/article/details/89381819',
+'https://blog.csdn.net/weixin_42555401/article/details/90077519',
+'https://blog.csdn.net/weixin_42555401/article/details/90046459',
+'https://blog.csdn.net/weixin_42555401/article/details/90036028',
+'https://blog.csdn.net/weixin_42555401/article/details/89963982',
+'https://blog.csdn.net/weixin_42555401/article/details/89886001',
+'https://blog.csdn.net/weixin_42555401/article/details/89841858',
+'https://blog.csdn.net/weixin_42555401/article/details/89646415',
+'https://blog.csdn.net/weixin_42555401/article/details/89609013',
+'https://blog.csdn.net/weixin_42555401/article/details/89554677',
+'https://blog.csdn.net/weixin_42555401/article/details/89483522',
+'https://blog.csdn.net/weixin_42555401/article/details/89483522',
+'https://blog.csdn.net/weixin_42555401/article/details/89483522',
+'https://blog.csdn.net/weixin_42555401/article/details/89483522',
+'https://blog.csdn.net/weixin_42555401/article/details/89181455',
+'https://blog.csdn.net/weixin_42555401/article/details/89181455',
+'https://blog.csdn.net/weixin_42555401/article/details/90232905',
+'https://blog.csdn.net/weixin_42555401/article/details/90639592',
+]
+for i in range(50000):
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    browser = webdriver.Chrome(options=chrome_options)
+    browser.get(random.choice(url_list))
+    #打印页面源代码
+    time.sleep(3)
+    browser.close()
+    #关闭浏览器
+    t=t+1
+    print('刷',t)
+    #关闭chreomedriver进程
